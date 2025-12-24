@@ -1,94 +1,78 @@
-Here is a clean, professional `README.md` tailored for your repository. It includes clear steps for the `key.json` setup and all necessary terminal commands.
+# VANI (Voice Agent for Native Interaction) 🗣️
 
-```markdown
-# VANI - Voice Agent for Native Interaction 🗣️
+VANI is a voice-first, agentic AI system designed to help users in rural India identify government welfare schemes in their native language (**Bengali**). Unlike standard linear chatbots, VANI utilizes a **Planner-Executor-Evaluator** architecture to separate reasoning from response generation.
 
-VANI is a voice-first, agentic AI system designed to help users identify government welfare schemes in their native language (**Bengali**). [cite_start]It uses a planner-executor-evaluator architecture powered by Google Vertex AI to reason, handle incomplete information, and detect contradictions in user input[cite: 2, 4, 11].
+This system was built to demonstrate an autonomous workflow that can handle native language inputs, manage conversation state, and actively detect logical contradictions in user data.
 
-## 🚀 Features
-* [cite_start]**Voice-First Interface:** Full Speech-to-Text (STT) and Text-to-Speech (TTS) pipeline supporting Bengali[cite: 9, 10].
-* [cite_start]**Agentic Reasoning:** Uses LangGraph to manage state, plan next steps, and ask clarifying questions[cite: 11].
-* [cite_start]**Contradiction Detection:** "Red Alert" logic to identify and resolve conflicting user data (e.g., changing age mid-conversation)[cite: 13].
-* [cite_start]**Safety Guardrails:** deterministic checks to ensure scheme eligibility rules are strictly followed[cite: 12].
-
----
-
-## 🛠️ Setup & Installation
-
-Follow these steps to get the project running on your local machine.
+## ⚙️ Setup & Installation
 
 ### 1. Clone the Repository
-Open your terminal and run:
 ```bash
 git clone [https://github.com/sidrainman/vani-agent-submission.git](https://github.com/sidrainman/vani-agent-submission.git)
 cd vani-agent-submission
+2. Install Dependencies
+Ensure you have Python 3.9+ installed, then run:
 
-```
+Bash
 
-### 2. Install Dependencies
-
-Make sure you have Python installed. Then run:
-
-```bash
 pip install -r requirements.txt
+3. Google Cloud Configuration (Required)
+This project uses Google Vertex AI and Cloud Text-to-Speech. You must provide valid credentials to run the agent.
 
-```
+Go to the Google Cloud Console.
 
----
+Create a Service Account and grant it the following roles:
 
-## 🔑 Configuration (Critical Step)
+Vertex AI User
 
-This project requires a **Google Cloud Service Account** key to access Vertex AI (Gemini) and Text-to-Speech services.
+Cloud Text-to-Speech API User
 
-1. **Go to Google Cloud Console:**
-* Navigate to [IAM & Admin > Service Accounts](https://console.cloud.google.com/iam-admin/serviceaccounts).
+Generate a JSON Key for this service account.
 
+Rename the downloaded file to key.json.
 
-2. **Create a Service Account:**
-* Click "Create Service Account". Give it a name (e.g., `vani-agent`).
+Move key.json into the root folder of this repository (the same folder containing app.py).
 
+Note: The key.json file is listed in .gitignore to prevent accidental commits.
 
-3. **Grant Permissions:**
-* Grant the account **Vertex AI User** and **Cloud Text-to-Speech API User** roles.
+▶️ Usage
+Once the configuration is complete, launch the application:
 
+Bash
 
-4. **Generate Key:**
-* Click on the newly created email -> **Keys** tab -> **Add Key** -> **Create new key**.
-* Select **JSON** and download the file.
-
-
-5. **Add to Project:**
-* Rename the downloaded file to exactly `key.json`.
-* Move this `key.json` file into the **root folder** of this project (same folder as `app.py`).
-
-
-
-> **⚠️ Security Note:** Never share your `key.json` or commit it to GitHub. This repository is configured to ignore it automatically.
-
----
-
-## ▶️ How to Run
-
-Once the dependencies are installed and the `key.json` is in place, start the application with:
-
-```bash
 streamlit run app.py
+The application will open in your default browser at http://localhost:8501.
 
-```
+Demo Instructions
+Grant Microphone Access: Allow the browser to access your microphone.
 
-This will open the application in your default web browser (usually at `http://localhost:8501`).
+Speak in Bengali: Click the "Record" button and state your details (Name, Age, Occupation, Income, Caste).
+
+Example: "Amar naam Siddhant. Amar boyosh 25. Ami ekjon chashi."
+
+Monitor Internals: Open the sidebar to view the live Agent State, including extracted entities and real-time contradiction flags.
+
+
+## 🚀 Key Features
+
+* **Voice-First Interface:** Complete Speech-to-Text (STT) and Text-to-Speech (TTS) pipeline operating entirely in Bengali.
+* **Agentic Reasoning:** Implements a cyclic state machine (using LangGraph) to plan next steps—deciding whether to ask for missing info, run tools, or resolve conflicts.
+* **Contradiction Detection:** Features a custom logic layer that triggers a "Red Alert" resolution loop if the user provides conflicting data (e.g., changing age mid-conversation) rather than blindly overwriting memory.
+* **Deterministic Guardrails:** Hybrid approach using LLMs for conversation and deterministic Python functions for strict eligibility rule enforcement (Age, Caste, Income limits).
 
 ---
 
-## 🧪 How to Use the Demo
+## 🛠️ Architecture Overview
 
-1. **Allow Microphone Access:** The browser will ask for permission to use your mic.
-2. **Speak in Bengali:** Click "Record" and state your details (Name, Age, Occupation, etc.).
-* *Example:* "Amar naam Siddhant. Amar boyosh 25. Ami ekjon chashi."
+The system operates on three primary nodes:
+1.  **Cognition Node (Planner):** Extracts entities and detects conflicts.
+2.  **Tool Node (Executor):** Runs eligibility rules against the scheme database.
+3.  **Generator Node (Evaluator):** Synthesizes the final Bengali audio response.
 
+---
+🧪 Scenarios to Test
+Happy Path: Provide all details (Name, Age, Occupation, Income, Caste) to get an immediate scheme recommendation.
 
-3. **View Internals:** Open the **Sidebar** on the left to see the agent's memory updating in real-time and any "Red Alert" contradictions.
+Missing Information: Provide partial details (e.g., just "I am a farmer"). The agent will dynamically ask for the missing Income and Caste fields.
 
-```
-
-```
+Conflict Resolution: Try changing a core detail (like Age) in the middle of the conversation. The agent will detect the inconsistency and force a clarification loop.
