@@ -1,0 +1,282 @@
+[
+  {
+    "id": "central_01",
+    "name": "PM Kisan Samman Nidhi",
+    "type": "Central Govt",
+    "description": "Income support of Rs. 6000 per year for small and marginal farmers.",
+    "rules": { "occupation": "Farmer", "income_limit": 0, "excludes": ["Government Employee"] }
+  },
+  {
+    "id": "central_02",
+    "name": "PM Mudra Yojana",
+    "type": "Central Govt",
+    "description": "Collateral free loans up to 10 Lakhs for small business and startups.",
+    "rules": { "needs_loan": true, "age_min": 18, "age_max": 65 }
+  },
+  {
+    "id": "central_03",
+    "name": "PM Awas Yojana (Gramin)",
+    "type": "Central Govt",
+    "description": "Financial assistance for constructing pucca houses in rural areas.",
+    "rules": { "income_limit": 300000, "employment_status": "Unemployed" }
+  },
+  {
+    "id": "central_04",
+    "name": "PM Ujjwala Yojana",
+    "type": "Central Govt",
+    "description": "Free LPG connection for women from BPL households.",
+    "rules": { "gender": "Female", "age_min": 18, "income_limit": 100000 }
+  },
+  {
+    "id": "central_05",
+    "name": "Ayushman Bharat (PM-JAY)",
+    "type": "Central Govt",
+    "description": "Health insurance cover of Rs. 5 Lakhs per family per year.",
+    "rules": { "income_limit": 250000 }
+  },
+  {
+    "id": "central_06",
+    "name": "PM SVANidhi",
+    "type": "Central Govt",
+    "description": "Working capital loan for street vendors.",
+    "rules": { "needs_loan": true, "occupation": "Vendor" }
+  },
+  {
+    "id": "central_07",
+    "name": "PM Vishwakarma",
+    "type": "Central Govt",
+    "description": "Support for traditional artisans and craftspeople with loans and training.",
+    "rules": { "needs_loan": true, "occupation": "Artisan", "age_min": 18 }
+  },
+  {
+    "id": "central_08",
+    "name": "Atal Pension Yojana",
+    "type": "Central Govt",
+    "description": "Guaranteed monthly pension for citizens in the unorganized sector.",
+    "rules": { "age_min": 18, "age_max": 40 }
+  },
+  {
+    "id": "central_09",
+    "name": "Sukanya Samriddhi Yojana",
+    "type": "Central Govt",
+    "description": "Small deposit scheme for the girl child's education and marriage.",
+    "rules": { "gender": "Female", "age_max": 10 }
+  },
+  {
+    "id": "central_10",
+    "name": "Stand Up India",
+    "type": "Central Govt",
+    "description": "Loans for SC/ST and women entrepreneurs for greenfield enterprises.",
+    "rules": { "needs_loan": true, "gender": "Female", "age_min": 18 }
+  },
+  {
+    "id": "central_11",
+    "name": "PM Matru Vandana Yojana",
+    "type": "Central Govt",
+    "description": "Maternity benefit for pregnant and lactating mothers.",
+    "rules": { "gender": "Female", "age_min": 19 }
+  },
+  {
+    "id": "central_12",
+    "name": "National Social Assistance Programme (Old Age Pension)",
+    "type": "Central Govt",
+    "description": "Monthly pension for elderly living below the poverty line.",
+    "rules": { "age_min": 60, "income_limit": 50000 }
+  },
+  {
+    "id": "central_13",
+    "name": "PM Jan Dhan Yojana",
+    "type": "Central Govt",
+    "description": "Universal access to banking services with overdraft and insurance.",
+    "rules": { "age_min": 10 }
+  },
+  {
+    "id": "central_14",
+    "name": "PM Suraksha Bima Yojana",
+    "type": "Central Govt",
+    "description": "Accidental insurance of Rs. 2 Lakhs at a premium of Rs. 20 per year.",
+    "rules": { "age_min": 18, "age_max": 70 }
+  },
+  {
+    "id": "central_15",
+    "name": "PM Jeevan Jyoti Bima Yojana",
+    "type": "Central Govt",
+    "description": "Life insurance cover of Rs. 2 Lakhs.",
+    "rules": { "age_min": 18, "age_max": 50 }
+  },
+  {
+    "id": "central_16",
+    "name": "PM Kaushal Vikas Yojana",
+    "type": "Central Govt",
+    "description": "Skill certification scheme to enable youth to take up industry-relevant training.",
+    "rules": { "age_min": 15, "age_max": 45, "employment_status": "Unemployed" }
+  },
+  {
+    "id": "central_17",
+    "name": "PM Employment Generation Programme (PMEGP)",
+    "type": "Central Govt",
+    "description": "Subsidy linked credit scheme for setting up new micro-enterprises.",
+    "rules": { "needs_loan": true, "age_min": 18, "qualification": "Class 8" }
+  },
+  {
+    "id": "central_18",
+    "name": "Deen Dayal Upadhyaya Grameen Kaushalya Yojana",
+    "type": "Central Govt",
+    "description": "Placement-linked skill training for rural poor youth.",
+    "rules": { "age_min": 15, "age_max": 35, "employment_status": "Unemployed" }
+  },
+  {
+    "id": "central_19",
+    "name": "PM Fasal Bima Yojana",
+    "type": "Central Govt",
+    "description": "Crop insurance for farmers against natural calamities.",
+    "rules": { "occupation": "Farmer" }
+  },
+  {
+    "id": "central_20",
+    "name": "National Apprenticeship Promotion Scheme",
+    "type": "Central Govt",
+    "description": "Financial support for apprenticeship training in industries.",
+    "rules": { "age_min": 14, "qualification": "Class 5" }
+  },
+  {
+    "id": "wb_01",
+    "name": "Lakshmir Bhandar",
+    "type": "State Govt",
+    "description": "Monthly financial assistance for women from West Bengal households.",
+    "rules": { "gender": "Female", "age_min": 25, "age_max": 60, "state": "West Bengal" }
+  },
+  {
+    "id": "wb_02",
+    "name": "Karma Sathi Prakalpa",
+    "type": "State Govt",
+    "description": "Subsidized loan up to 2 Lakhs for unemployed youth to start business.",
+    "rules": { "needs_loan": true, "age_min": 18, "age_max": 50, "qualification": "Class 8", "state": "West Bengal", "employment_status": "Unemployed" }
+  },
+  {
+    "id": "wb_03",
+    "name": "Jai Johar (ST Pension)",
+    "type": "State Govt",
+    "description": "Monthly pension of Rs. 1000 for Scheduled Tribe elderly.",
+    "rules": { "caste": "ST", "age_min": 60, "state": "West Bengal" }
+  },
+  {
+    "id": "wb_04",
+    "name": "Bandhu Prakalpa (SC Pension)",
+    "type": "State Govt",
+    "description": "Monthly pension of Rs. 1000 for Scheduled Caste elderly.",
+    "rules": { "caste": "SC", "age_min": 60, "state": "West Bengal" }
+  },
+  {
+    "id": "wb_05",
+    "name": "Kanyashree Prakalpa",
+    "type": "State Govt",
+    "description": "Financial aid for girl students to prevent child marriage and encourage education.",
+    "rules": { "gender": "Female", "age_min": 13, "age_max": 18, "state": "West Bengal" }
+  },
+  {
+    "id": "wb_06",
+    "name": "Rupashree Prakalpa",
+    "type": "State Govt",
+    "description": "One-time financial grant of Rs. 25,000 for marriage of poor girls.",
+    "rules": { "gender": "Female", "age_min": 18, "income_limit": 150000, "state": "West Bengal" }
+  },
+  {
+    "id": "wb_07",
+    "name": "Sabooj Sathi",
+    "type": "State Govt",
+    "description": "Distribution of bicycles to students of Class 9 to 12.",
+    "rules": { "age_min": 14, "age_max": 18, "qualification": "Class 9", "state": "West Bengal" }
+  },
+  {
+    "id": "wb_08",
+    "name": "Swasthya Sathi",
+    "type": "State Govt",
+    "description": "Smart card-based health insurance of Rs. 5 Lakhs for all citizens of West Bengal.",
+    "rules": { "state": "West Bengal" }
+  },
+  {
+    "id": "wb_09",
+    "name": "Student Credit Card",
+    "type": "State Govt",
+    "description": "Loan up to 10 Lakhs for higher education with low interest rate.",
+    "rules": { "needs_loan": true, "age_max": 40, "state": "West Bengal" }
+  },
+  {
+    "id": "wb_10",
+    "name": "Krishak Bandhu",
+    "type": "State Govt",
+    "description": "Financial assistance and death benefit for farmers in West Bengal.",
+    "rules": { "occupation": "Farmer", "state": "West Bengal" }
+  },
+  {
+    "id": "wb_11",
+    "name": "Yuvashree",
+    "type": "State Govt",
+    "description": "Unemployment assistance of Rs. 1500 per month for enrolled job seekers.",
+    "rules": { "state": "West Bengal", "employment_status": "Unemployed", "age_min": 18, "age_max": 45 }
+  },
+  {
+    "id": "wb_12",
+    "name": "Gati Dhara",
+    "type": "State Govt",
+    "description": "Subsidy up to 1 Lakh for buying commercial vehicles to create self-employment.",
+    "rules": { "needs_loan": true, "age_min": 20, "age_max": 45, "state": "West Bengal", "employment_status": "Unemployed" }
+  },
+  {
+    "id": "wb_13",
+    "name": "Bhabishyat Credit Card",
+    "type": "State Govt",
+    "description": "Financial assistance and loans up to 5 Lakhs for young entrepreneurs.",
+    "rules": { "needs_loan": true, "age_min": 18, "age_max": 45, "state": "West Bengal" }
+  },
+  {
+    "id": "wb_14",
+    "name": "Aikyashree",
+    "type": "State Govt",
+    "description": "Scholarships for minority students in West Bengal.",
+    "rules": { "caste": "Minority", "state": "West Bengal" }
+  },
+  {
+    "id": "wb_15",
+    "name": "Shikshashree",
+    "type": "State Govt",
+    "description": "Financial assistance for SC/ST students in Class 5 to 8.",
+    "rules": { "caste": "SC", "qualification": "Class 5", "state": "West Bengal" }
+  },
+  {
+    "id": "wb_16",
+    "name": "Nijo Griha Nijo Bhumi",
+    "type": "State Govt",
+    "description": "Distribution of 5 decimals of land to landless rural families.",
+    "rules": { "occupation": "Landless", "state": "West Bengal" }
+  },
+  {
+    "id": "wb_17",
+    "name": "Manabik Pension Scheme",
+    "type": "State Govt",
+    "description": "Monthly pension of Rs. 1000 for persons with 40% or more disability.",
+    "rules": { "occupation": "Disabled", "state": "West Bengal" }
+  },
+  {
+    "id": "wb_18",
+    "name": "Bina Mulya Samajik Suraksha Yojana",
+    "type": "State Govt",
+    "description": "Free social security benefits for unorganized sector workers.",
+    "rules": { "occupation": "Unorganized Worker", "state": "West Bengal" }
+  },
+  {
+    "id": "wb_19",
+    "name": "Khadya Sathi",
+    "type": "State Govt",
+    "description": "Subsidized food grains for 90% of West Bengal's population.",
+    "rules": { "state": "West Bengal" }
+  },
+  {
+    "id": "wb_20",
+    "name": "Lokshilpi Pension",
+    "type": "State Govt",
+    "description": "Monthly pension for registered folk artists of West Bengal.",
+    "rules": { "occupation": "Artisan", "age_min": 60, "state": "West Bengal" }
+  }
+]

@@ -1,0 +1,7 @@
+streamlit
+google-cloud-aiplatform
+google-cloud-texttospeech
+langgraph
+langchain
+langchain-google-vertexai
+pydantic
